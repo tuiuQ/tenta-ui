@@ -1,7 +1,12 @@
 {
-  "name": "tenta-ui",
-  "version": "0.1.0",
-  "private": true,
+  "name": "antenta-ui",
+  "version": "1.0.0",
+  "private": false,
+  "main": "dist/tenta-ui.umd.min.js",
+  "author": {
+    "name": "tenta",
+    "email": "13719283454@163.com"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

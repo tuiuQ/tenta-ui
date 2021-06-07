@@ -1,19 +1,28 @@
-# tenta-ui
+# antenta-ui
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+## 安装
+```shell
+npm i antenta-ui
 ```
 
-### Compiles and minifies for production
-```
-yarn build
+### 引入Antenta
+
+你可以引入整个Antenta
+
+##### 完整引入
+
+在main.js中写入以下内容
+
+```javascript
+import { createApp } from 'vue'
+import App from './App.vue'
+import AntentaUI from 'antenta-ui'
+import 'antenta-ui/dist/tenta-ui.css'
+
+createApp(App).use(AntentaUI).mount("#app")
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+以上代码便完成Antenta的引入，需要注意的是，样式文件需要单独引入。
+
+### 开始使用
+
