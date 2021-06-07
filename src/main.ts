@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import TentaUI from '../packages'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(TentaUI)
+app.mount('#app')

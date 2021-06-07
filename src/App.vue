@@ -1,27 +1,62 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="container">
+    <te-form
+      :model="model"
+      :label-width="100"
+    >
+      <te-form-item label="用户名">
+        <te-input
+          placeholder="请输入用户名"
+          v-model="model.username"
+        ></te-input>
+      </te-form-item>
+
+      <te-form-item label="记住用户">
+        <te-switch
+          v-model="model.active"
+        ></te-switch>
+      </te-form-item>
+    </te-form>
+  </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent, reactive, toRefs } from 'vue'
 
-@Options({
-  components: {
-    HelloWorld,
-  },
+export default defineComponent({
+  name: 'App',
+  setup() {
+
+    const state = reactive({
+      model: {}
+    })
+
+    const methods = {
+
+    }
+    return {
+      ...methods,
+      ...toRefs(state)
+    }
+  }
 })
-export default class App extends Vue {}
 </script>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .wrapper {
+    width: 375px;
+    margin: 100px auto;
+  }
+  .row {
+    margin: 20px 0;
+    .te-button {
+      margin: 0 10px;
+    }
+  }
+
+  .container {
+    width: 1080px;
+    height: 420px;
+    margin: 150px auto;
+  }
 </style>
