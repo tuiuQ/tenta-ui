@@ -43,9 +43,10 @@
 
 import { defineComponent } from 'vue'
 import { magnifier } from '../../directives'
+import { prefix } from '../../types/prefix'
 
 export default defineComponent({
-  name: 'te-magnifier',
+  name: `${prefix}magnifier`,
   props: {
     imgWidth: {
       type: Number,

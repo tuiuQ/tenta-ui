@@ -1,28 +1,28 @@
 <template>
   <div
-    class="te-carousel"
+    class="an-carousel"
     @mouseenter="mouseEnter"
     @mouseleave="mouseLeave"
   >
     <div class="inner">
-      <te-carousel-dot
+      <an-carousel-dot
         :hasDot="hasDot"
         :itemLen="itemLen"
         :currentIndex="currentIndex"
         :dotBgColor="dotBgColor"
         @dotClick="dotClick"
-      ></te-carousel-dot>
+      ></an-carousel-dot>
 
-      <te-carousel-director
+      <an-carousel-director
         dir="prev"
-        @click="dirClick"
+        @dirClick="dirClick"
         v-if="hasDirector"
-      ></te-carousel-director>
-      <te-carousel-director
+      ></an-carousel-director>
+      <an-carousel-director
         dir="next"
         @dirClick="dirClick"
         v-if="hasDirector"
-      ></te-carousel-director>
+      ></an-carousel-director>
       <slot></slot>
     </div>
   </div>
@@ -43,7 +43,7 @@ import CarouselDirector from './Director.vue'
 import { Director } from '../../types/data-types'
 
 export default defineComponent({
-  name: 'te-carousel',
+  name: 'an-carousel',
   components: {
     [CarouselDot.name]: CarouselDot,
     [CarouselDirector.name]: CarouselDirector
@@ -74,6 +74,7 @@ export default defineComponent({
       default: "#ff5000"
     }
   },
+  emits: ['dotClick', 'dirClick'],
   setup (props) {
 
     const instance = getCurrentInstance()
@@ -129,7 +130,6 @@ export default defineComponent({
     }
 
     onMounted((): void => {
-      console.log(instance);
       state.itemLen = <number>instance?.slots.default?.()[0].children?.length
       autoPlay()
     })
@@ -155,7 +155,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-  .te-carousel {
+  .an-carousel {
     width: 100%;
     height: 100%;
 

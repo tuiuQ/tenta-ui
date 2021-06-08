@@ -1,6 +1,5 @@
 <template>
-  <div class="te-checkbox-group">
-    {{ modelValue }}
+  <div class="an-checkbox-group">
     <slot></slot>
   </div>
 </template>
@@ -10,7 +9,7 @@ import { defineComponent, getCurrentInstance, provide } from 'vue'
 import { ComponentInternalInstance } from "@vue/runtime-core";
 
 export default defineComponent({
-  name: "te-checkbox-group",
+  name: "an-checkbox-group",
   props: {
     modelValue: Array
   },

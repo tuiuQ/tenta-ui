@@ -6,9 +6,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { prefix } from '../../types/prefix'
 
 export default defineComponent({
-  name: "te-notdata-tip"
+  name: `${prefix}notdata-tip`
 })
 </script>
 

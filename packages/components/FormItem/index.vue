@@ -1,12 +1,12 @@
 <template>
-  <div class="te-form-item">
+  <div class="an-form-item">
     <label
-      class="te-form-item__label"
+      class="an-form-item__label"
       :style="{
         width: labelWidth + 'px'
       }"
     >{{ label }}</label>
-    <div class="te-form-item_content">
+    <div class="an-form-item_content">
       <slot></slot>
     </div>
   </div>
@@ -16,7 +16,7 @@
 import { defineComponent, inject, reactive, toRefs } from 'vue'
 
 export default defineComponent({
-  name: "te-form-item",
+  name: "an-form-item",
   props: {
     label: {
       type: String,
@@ -36,9 +36,9 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-.te-form-item {
+.an-form-item {
   margin-bottom: 25px;
-  .te-form-item__label {
+  .an-form-item__label {
     text-align: right;
     vertical-align: middle;
     float: left;
@@ -48,7 +48,7 @@ export default defineComponent({
     padding: 0 12px 0 0;
     box-sizing: border-box;
   }
-  .te-form-item_content {
+  .an-form-item_content {
     line-height: 40px;
     position: relative;
     font-size: 14px;

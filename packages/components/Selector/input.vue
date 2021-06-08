@@ -1,6 +1,6 @@
 <template>
-  <div class="te-selector-input">
-    <label class="te-placeholder">{{ placeholder }}</label>
+  <div class="an-selector-input">
+    <label class="an-placeholder">{{ placeholder }}</label>
     <input
       type="text"
       class="input"
@@ -10,15 +10,16 @@
       @focus="searchOptions($event)"
       @blur="setValue(value)"
     />
-    <span class="icon te-icon-outlined_down_linedefuben"></span>
+    <span class="icon an-icon-outlined_down_linedefuben"></span>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, getCurrentInstance } from 'vue'
+import { prefix } from '../../types/prefix'
 
 export default defineComponent({
-  name: 'te-selector-input',
+  name: `${prefix}selector-input`,
   props: {
     placeholder: {
       type: String,
@@ -54,7 +55,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-  .te-selector-input {
+  .an-selector-input {
     position: relative;
     width: 100%;
     height: 38px;
@@ -76,12 +77,12 @@ export default defineComponent({
       }
     }
 
-    .te-placeholder,
+    .an-placeholder,
     .icon {
       position: absolute;
     }
 
-    .te-placeholder {
+    .an-placeholder {
       left: 15px;
       top: 8px;
       color: #999;
@@ -92,7 +93,7 @@ export default defineComponent({
       top: 12px;
       color: #999;
 
-      &[class*=te-icon-] {
+      &[class*=an-icon-] {
         font-size: 22px;
         top: 8px;
       }

@@ -1,11 +1,11 @@
 <template>
   <div
-    class="te-input"
-    :class="{ 'te-input--suffix': isShowSuffix }"
+    class="an-input"
+    :class="{ 'an-input--suffix': isShowSuffix }"
     v-focus
   >
     <label
-      class="te-placeholder"
+      class="an-placeholder"
       :class="{'is-disabled': disabled}"
       v-show="!modelValue"
     >{{ placeholder }}</label>
@@ -16,17 +16,20 @@
       :disabled="disabled"
       :class="{'is-disabled': disabled}"
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="handleModelValue"
+      @keydown="handleInput"
+      @focus="handleFocus"
+      @blur="handleBlur"
     >
-    <span class="te-input__suffix" v-if="isShowSuffix">
+    <span class="an-input__suffix" v-if="isShowSuffix">
       <i
         v-if="clearable"
-        class="te-input__icon te-icon-outlined_close"
+        class="an-input__icon an-icon-outlined_close"
         @click="$emit('update:modelValue', '')"
       ></i>
       <i
         v-if="showPassword"
-        class="te-input__icon te-icon-outlined_visible"
+        class="an-input__icon an-icon-outlined_visible"
         @click="updateShowPassword"
       ></i>
     </span>
@@ -34,11 +37,16 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, computed, reactive, toRefs } from 'vue'
+  import {
+    defineComponent,
+    computed,
+    reactive,
+    toRefs
+  } from 'vue'
   import { focus } from '../../directives'
 
   export default defineComponent({
-    name: "te-input",
+    name: "an-input",
     directives: {
       focus
     },
@@ -59,10 +67,7 @@
         type: Boolean,
         default: false
       },
-      modelValue: {
-        type: String,
-        default: ''
-      },
+      modelValue: [String, Number],
       clearable: {
         type: Boolean,
         default: false
@@ -70,9 +75,14 @@
       showPassword: {
         type: Boolean,
         default: false
+      },
+      inputNumber: {
+        type: Boolean,
+        default: false
       }
     },
     setup (props, ctx) {
+      const reg = /[a-zA-Z]+/i
 
       const state = reactive({
         stateShowPassword: props.showPassword
@@ -84,6 +94,18 @@
         clearValue: (e: InputEvent) => {
           console.log(e);
           ctx.emit('input', '')
+        },
+        handleInput: (e: MouseEvent) => {
+          ctx.emit('keydown', e)
+        },
+        handleBlur: (e: MouseEvent) => {
+          ctx.emit('blur', e)
+        },
+        handleModelValue: (e: MouseEvent) => {
+          ctx.emit('update:modelValue', (e.target as any).value)
+        },
+        handleFocus: (e: MouseEvent) => {
+          ctx.emit('focus', e)
         }
       }
 
@@ -110,7 +132,7 @@
 </script>
 
 <style scoped lang="less">
-  .te-input {
+  .an-input {
     width: 100%;
     position: relative;
     font-size: 14px;
@@ -151,7 +173,7 @@
       }
     }
 
-    .te-placeholder {
+    .an-placeholder {
       position: absolute;
       top: 50%;
       left: 18px;
@@ -168,12 +190,12 @@
     }
   }
 
-  .te-input--suffix {
+  .an-input--suffix {
     .inner {
       padding-right: 30px;
     }
 
-    .te-input__suffix {
+    .an-input__suffix {
       position: absolute;
       height: 100%;
       right: 10px;
@@ -190,7 +212,7 @@
         transition: color .2s cubic-bezier(.645, .045, .355, 1);
       }
 
-      .te-icon-outlined_close {
+      .an-icon-outlined_close {
         display: none;
       }
     }

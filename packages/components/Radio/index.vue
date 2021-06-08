@@ -1,21 +1,21 @@
 <template>
   <label
-    class="te-radio"
+    class="an-radio"
     :class="{
       'is-checked': model === label
     }"
   >
-    <span class="te-radio__input">
-      <span class="te-radio__inner"></span>
+    <span class="an-radio__input">
+      <span class="an-radio__inner"></span>
       <input
-        class="te-radio__original"
+        class="an-radio__original"
         type="radio"
         :name="name"
         :value="label"
         v-model="model"
       >
     </span>
-    <span class="te-radio__label">
+    <span class="an-radio__label">
       <slot></slot>
       <template v-if="!$slots.default">{{ label }}</template>
     </span>
@@ -25,9 +25,10 @@
 <script lang="ts">
 import { defineComponent, computed, reactive, toRefs, inject } from 'vue'
 import { ComponentInternalInstance } from "@vue/runtime-core";
+import { prefix } from '../../types/prefix'
 
 export default defineComponent({
-  name: "te-radio",
+  name: `${prefix}radio`,
   props: {
     label: {
       type: [String, Number, Boolean],
@@ -45,7 +46,6 @@ export default defineComponent({
   setup (props, ctx) {
 
     const RadioGroup = inject('RadioGroup') as ComponentInternalInstance
-    console.log(RadioGroup);
     const state = reactive({
       RadioGroup: inject('RadioGroup') as ComponentInternalInstance,
       model: computed({
@@ -72,7 +72,7 @@ export default defineComponent({
 
 <style scoped lang="less">
   @primary-color: #409eff;
-  .te-radio {
+  .an-radio {
     color: #606266;
     font-weight: 500;
     line-height: 1;
@@ -86,7 +86,7 @@ export default defineComponent({
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    .te-radio__input {
+    .an-radio__input {
       white-space: nowrap;
       cursor: pointer;
       outline: none;
@@ -94,7 +94,7 @@ export default defineComponent({
       line-height: 1;
       position: relative;
       vertical-align: middle;
-      .te-radio__inner {
+      .an-radio__inner {
         border: 1px solid #dcdfe6;
         border-radius: 100%;
         width: 14px;
@@ -117,7 +117,7 @@ export default defineComponent({
           transition: transform .15s ease-in;
         }
       }
-      .te-radio__original {
+      .an-radio__original {
         opacity: 0;
         outline: none;
         position: absolute;
@@ -129,14 +129,14 @@ export default defineComponent({
         margin: 0;
       }
     }
-    .te-radio__label {
+    .an-radio__label {
       font-size: 14px;
       padding-left: 10px;
     }
 
     &.is-checked {
-      .te-radio__input {
-        .te-radio__inner {
+      .an-radio__input {
+        .an-radio__inner {
           border-color: @primary-color;
           background-color: @primary-color;
           &:after {
@@ -144,7 +144,7 @@ export default defineComponent({
           }
         }
       }
-      .te-radio__label {}
+      .an-radio__label {}
       color: @primary-color;
     }
   }

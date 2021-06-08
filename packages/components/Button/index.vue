@@ -1,21 +1,21 @@
 <template>
   <button
     @click="handleClick"
-    class="te-button"
+    class="an-button"
     :class="[
-      `te-button--${type}`,
+      `an-button--${type}`,
       {
         'is-round': round,
         'is-circle': circle,
         'is-disabled': disable,
         'is-block': block
       },
-      `te-button--${size}`
+      `an-button--${size}`
     ]"
   >
     <i
       v-if="icon"
-      :class="'te-icon-' + theme + '_' + icon"
+      :class="'an-icon-' + theme + '_' + icon"
       :style="{ color: iconColor }"
     ></i>
     <span v-if="$slots.default" ><slot></slot></span>
@@ -38,7 +38,7 @@ import { defineComponent } from 'vue'
  * @func click emit
  */
 export default defineComponent({
-  name: 'te-button',
+  name: 'an-button',
   props: {
     type: {
       type: String,

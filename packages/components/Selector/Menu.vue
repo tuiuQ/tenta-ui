@@ -1,5 +1,5 @@
 <template>
-  <div class="te-selector-menu">
+  <div class="an-selector-menu">
     <template v-if="searchData.length > 0">
       <div
         class="menu-item"
@@ -10,7 +10,7 @@
         {{ item.text }}
       </div>
     </template>
-    <te-notdata-tip v-else></te-notdata-tip>
+    <an-notdata-tip v-else></an-notdata-tip>
   </div>
 </template>
 
@@ -23,9 +23,10 @@ import {
 } from 'vue'
 import { MenuItem } from '../../types/data-types'
 import NotDataTip from './NoDataTip.vue'
+import { prefix } from '../../types/prefix'
 
 export default defineComponent({
-  name: "te-selector-menu",
+  name: `${prefix}selector-menu`,
   components: {
     [NotDataTip.name]: NotDataTip
   },
@@ -88,7 +89,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-  .te-selector-menu {
+  .an-selector-menu {
     display: none;
     position: absolute;
     left: 0;

@@ -1,16 +1,16 @@
 <template>
-  <div class="te-selector" v-focus>
-    <te-selector-input
+  <div class="an-selector" v-focus>
+    <an-selector-input
       :placeholder="placeholder"
       :value="inputValue"
       @searchOptions="searchOptions"
-    ></te-selector-input>
+    ></an-selector-input>
 
-    <te-selector-menu
+    <an-selector-menu
       :data="data"
       @setItemValue="setItemValue"
       :searchValue="searchValue"
-    ></te-selector-menu>
+    ></an-selector-menu>
   </div>
 </template>
 
@@ -20,10 +20,11 @@ import SelectorInput from './input.vue'
 import SelectorMenu from './Menu.vue'
 import { MenuItem } from '../../types/data-types'
 import focus from './focus'
+import { prefix } from '../../types/prefix'
 
 
 export default defineComponent({
-  name: 'te-selector',
+  name: `${prefix}selector`,
   components: {
     [SelectorInput.name]: SelectorInput,
     [SelectorMenu.name]: SelectorMenu
@@ -60,7 +61,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-  .te-selector {
+  .an-selector {
     position: relative;
     width: 300px;
   }

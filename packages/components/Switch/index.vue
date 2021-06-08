@@ -1,21 +1,21 @@
 <template>
   <div
-    class="te-switch"
+    class="an-switch"
     @click="changeSwitch"
     :class="{'is-checked': modelValue}"
   >
     <span
-      class="te-switch__core"
+      class="an-switch__core"
       :style="{
         backgroundColor: modelValue ? activeColor : inactiveColor,
         borderColor: modelValue ? activeColor : inactiveColor,
       }"
     >
-      <span class="te-switch__button"></span>
+      <span class="an-switch__button"></span>
     </span>
     <input
       type="checkbox"
-      class="te-switch__input"
+      class="an-switch__input"
       :name="name"
       ref="input"
     >
@@ -24,11 +24,11 @@
 
 <script lang="ts">
 import { defineComponent, getCurrentInstance, onMounted } from 'vue'
-import Instance = WebAssembly.Instance;
+import { prefix } from '../../types/prefix'
 import {ComponentInternalInstance} from "@vue/runtime-core";
 
 export default defineComponent({
-  name: "te-switch",
+  name: `${prefix}switch`,
   props: {
     modelValue: {
       type: Boolean,
@@ -67,7 +67,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-.te-switch {
+.an-switch {
   display: inline-block;
   align-items: center;
   position: relative;
@@ -76,14 +76,14 @@ export default defineComponent({
   height: 20px;
   vertical-align: middle;
 
-  .te-switch__input {
+  .an-switch__input {
     position: absolute;
     width: 0;
     height: 0;
     opacity: 0;
     margin: 0;
   }
-  .te-switch__core {
+  .an-switch__core {
     margin: 0;
     display: inline-block;
     position: relative;
@@ -97,7 +97,7 @@ export default defineComponent({
     cursor: pointer;
     transition: border-color .3s, background-color .3s;
     vertical-align:  middle;
-    .te-switch__button {
+    .an-switch__button {
       position: absolute;
       top: 1px;
       left: 1px;
@@ -110,10 +110,10 @@ export default defineComponent({
   }
 
   &.is-checked {
-    .te-switch__core {
+    .an-switch__core {
       background-color: #409eff;
       border-color: #409eff;
-      .te-switch__button {
+      .an-switch__button {
         transform: translateX(20px)
       }
     }

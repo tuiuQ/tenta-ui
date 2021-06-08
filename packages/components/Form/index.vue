@@ -1,5 +1,5 @@
 <template>
-  <div class="te-form">
+  <div class="an-form">
     <slot></slot>
   </div>
 </template>
@@ -7,10 +7,9 @@
 <script lang="ts">
 import { defineComponent, provide, getCurrentInstance } from 'vue'
 import { ComponentInternalInstance } from "@vue/runtime-core";
-import {prop} from "vue-class-component";
 
 export default defineComponent({
-  name: "te-form",
+  name: "an-form",
   props: {
     model: {
       type: Object,

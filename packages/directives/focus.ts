@@ -8,14 +8,17 @@ export default {
           oCloseIcon = el.querySelector('.te-icon-outlined_close')
 
     if (oInput.value.length > 0) {
-      hideElement(oPlaceHolder)
+      if (oPlaceHolder) {
+        hideElement(oPlaceHolder)
+      }
       if (oCloseIcon) {
         showElement(oCloseIcon)
       }
     }
 
     oInput.addEventListener('focus', () => {
-      hideElement(oPlaceHolder)
+      if (oPlaceHolder)
+        hideElement(oPlaceHolder)
       if (oInput.value.length > 0) {
         if (oCloseIcon) {
           showElement(oCloseIcon)
@@ -25,7 +28,8 @@ export default {
 
     oInput.addEventListener('blur', () => {
       if (oInput.value.length === 0) {
-        showElement(oPlaceHolder)
+        if (oPlaceHolder)
+          showElement(oPlaceHolder)
         if (oCloseIcon) {
           hideElement(oCloseIcon)
         }

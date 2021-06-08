@@ -17,10 +17,11 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'te-carousel-director',
+  name: 'an-carousel-director',
   props: {
     dir: String
   },
+  emits: ['dirClick'],
   setup (props, ctx) {
     const dirClick = (dir: string) => {
       ctx.emit('dirClick', dir)

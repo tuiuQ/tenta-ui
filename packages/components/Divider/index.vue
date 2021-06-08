@@ -1,16 +1,16 @@
 <template>
   <div
-    class="te-divider"
+    class="an-divider"
     :class="[
-      `te-divider--${type}`,
-      'te-divider--with-text',
-      orientation === 'center' ? '' : `te-divider--with-text-${orientation}`,
+      `an-divider--${type}`,
+      'an-divider--with-text',
+      orientation === 'center' ? '' : `an-divider--with-text-${orientation}`,
       {
-        'te-divider--dashed': dashed
+        'an-divider--dashed': dashed
       }
     ]"
   >
-    <span v-if="text" class="te-divider--inner-text">{{ text }}</span>
+    <span v-if="text" class="an-divider--inner-text">{{ text }}</span>
   </div>
 </template>
 
@@ -18,7 +18,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'te-divider',
+  name: 'an-divider',
   props: {
     text: {
       type: String
@@ -40,7 +40,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-  .te-divider {
+  .an-divider {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -52,13 +52,13 @@ export default defineComponent({
     font-feature-settings: "tnum";
     border-top: 1px solid rgba(0, 0, 0, .06);
 
-    &.te-divider--horizontal {
+    &.an-divider--horizontal {
       display: flex;
       clear: both;
       width: 100%;
       min-width: 100%;
       margin: 24px 0;
-      &.te-divider--with-text {
+      &.an-divider--with-text {
         display: flex;
         margin: 16px 0;
         color: rgba(0, 0, 0, .85);
@@ -89,24 +89,24 @@ export default defineComponent({
           content: "";
         }
       }
-      &.te-divider--with-text-right:before {
+      &.an-divider--with-text-right:before {
         top: 50%;
         width: 95%;
       }
-      &.te-divider--with-text-right:after {
+      &.an-divider--with-text-right:after {
         top: 50%;
         width: 5%;
       }
-      &.te-divider--with-text-left:before {
+      &.an-divider--with-text-left:before {
         top: 50%;
         width: 5%;
       }
-      &.te-divider--with-text-left:after {
+      &.an-divider--with-text-left:after {
          top: 50%;
          width: 95%;
        }
     }
-    &.te-divider--vertical {
+    &.an-divider--vertical {
       position: relative;
       top: -.06em;
       display: inline-block;
@@ -116,12 +116,12 @@ export default defineComponent({
       border-top: 0;
       border-left: 1px solid rgba(0, 0, 0, .06);
     }
-    .te-divider--inner-text {
+    .an-divider--inner-text {
       display: inline-block;
       padding: 0 1em;
     }
 
-    &.te-divider--dashed {
+    &.an-divider--dashed {
       background: none;
       border: dashed rgba(0, 0, 0, .06);
       border-width: 1px 0 0;

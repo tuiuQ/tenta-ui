@@ -1,14 +1,15 @@
 <template>
-  <div class="te-radio-group">
+  <div class="an-radio-group">
     <slot></slot>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, getCurrentInstance, provide } from 'vue'
+import { prefix } from '../../types/prefix'
 
 export default defineComponent({
-  name: "te-radio-group",
+  name: `${prefix}radio-group`,
   props: {
     modelValue: {
       type: [String, Number, Boolean],

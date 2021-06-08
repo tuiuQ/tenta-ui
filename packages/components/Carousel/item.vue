@@ -1,6 +1,6 @@
 <template>
   <transition>
-    <div class="te-carousel-item" v-show="selfIndex === currentIndex">
+    <div class="an-carousel-item" v-if="selfIndex === currentIndex">
       <slot></slot>
     </div>
   </transition>
@@ -16,7 +16,8 @@ import {
 } from 'vue'
 
 export default defineComponent({
-  name: "te-carousel-item",
+  name: "an-carousel-item",
+  emits: ['dirClick'],
   setup () {
     const instance = getCurrentInstance()
     const state = reactive({
@@ -42,7 +43,7 @@ export default defineComponent({
      width: 100%;
    }
 
-   .te-carousel-item {
+   .an-carousel-item {
      position: absolute;
      top: 0;
      left: 0;

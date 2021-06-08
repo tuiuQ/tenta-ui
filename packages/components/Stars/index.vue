@@ -5,7 +5,7 @@
       :key="num"
       :class="[
         'icon',
-        `te-icon-${theme}_${icon}`,
+        `an-icon-${theme}_${icon}`,
         num <= starNum ? 'active' : ''
       ]"
       :style="{fontSize: size + 'px'}"
@@ -17,9 +17,10 @@
 <script>
 import { defineComponent } from 'vue'
 import { useStars } from '../../hooks'
+import { prefix } from '../../types/prefix'
 
 export default defineComponent({
-  name: 'te-stars',
+  name: `${prefix}stars`,
   props: {
     num: {
       type: Number,

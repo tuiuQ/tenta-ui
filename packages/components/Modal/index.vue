@@ -26,7 +26,7 @@
           @click="cancel"
         >
 <!--          &times;-->
-          <span class="te-icon-outlined_close"></span>
+          <span class="an-icon-outlined_close"></span>
         </a>
       </header>
       <article class="content">
@@ -40,16 +40,16 @@
         class="btn-group"
         v-if="btnGroupShow"
       >
-        <te-button
+        <an-button
           type="primary"
           class="btn"
           @click="confirm"
-        >{{ confirmText }}</te-button>
-        <te-button
+        >{{ confirmText }}</an-button>
+        <an-button
           type="info"
           class="btn"
           @click="cancel"
-        >{{ cancelText }}</te-button>
+        >{{ cancelText }}</an-button>
       </div>
     </div>
   </div>
@@ -57,9 +57,10 @@
 
 <script>
 import { defineComponent, reactive, toRefs } from 'vue'
+import { prefix } from '../../types/prefix'
 
 export default defineComponent({
-  name: 'te-modal',
+  name: `${prefix}modal`,
   props: {
     show: {
       type: Boolean,

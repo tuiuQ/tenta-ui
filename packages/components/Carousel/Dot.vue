@@ -19,7 +19,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'te-carousel-dot',
+  name: 'an-carousel-dot',
   props: {
     itemLen: {
       type: Number,
@@ -38,7 +38,7 @@ export default defineComponent({
       default: true
     }
   },
-
+  emits: ['dotClick'],
   setup (props, ctx) {
     const dotClick = (index) => {
       ctx.emit('dotClick', index)

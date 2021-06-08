@@ -1,21 +1,21 @@
 <template>
   <label
-    class="te-checkbox"
+    class="an-checkbox"
     :class="{
       'is-checked': isChecked
     }"
   >
-    <span class="te-checkbox__input">
-      <span class="te-checkbox__inner"></span>
+    <span class="an-checkbox__input">
+      <span class="an-checkbox__inner"></span>
       <input
         type="checkbox"
-        class="te-checkbox__original"
+        class="an-checkbox__original"
         :name="name"
         :value="label"
         v-model="model"
       >
     </span>
-    <span class="te-checkbox__label">
+    <span class="an-checkbox__label">
       <slot></slot>
       <template v-if="!$slots.default">{{ label }}</template>
     </span>
@@ -33,7 +33,7 @@ import {
 import {ComponentInternalInstance} from "@vue/runtime-core";
 
 export default defineComponent({
-  name: "te-checkbox",
+  name: "an-checkbox",
   props: {
     label: {
       type: [String, Number, Boolean],
@@ -82,7 +82,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-.te-checkbox {
+.an-checkbox {
   color: #606266;
   font-weight: 500;
   font-size: 14px;
@@ -92,7 +92,7 @@ export default defineComponent({
   white-space: nowrap;
   user-select: none;
   margin-right: 30px;
-  .te-checkbox__input {
+  .an-checkbox__input {
     white-space: nowrap;
     cursor: pointer;
     outline: none;
@@ -100,7 +100,7 @@ export default defineComponent({
     line-height: 1;
     position: relative;
     vertical-align: middle;
-    .te-checkbox__inner {
+    .an-checkbox__inner {
       display: inline-block;
       position: relative;
       border: 1px solid #dcdfe6;
@@ -128,7 +128,7 @@ export default defineComponent({
         transform-origin: center;
       }
     }
-    .te-checkbox__original {
+    .an-checkbox__original {
       opacity: 0;
       outline: none;
       position: absolute;
@@ -139,15 +139,15 @@ export default defineComponent({
       z-index: -1;
     }
   }
-  .te-checkbox__label {
+  .an-checkbox__label {
     display: inline-block;
     padding-left: 10px;
     line-height: 19px;
     font-size: 14px;
   }
   &.is-checked {
-    .te-checkbox__input {
-      .te-checkbox__inner {
+    .an-checkbox__input {
+      .an-checkbox__inner {
         background-color: #409eff;
         border-color: #409eff;
       }
@@ -155,7 +155,7 @@ export default defineComponent({
         transform: rotate(45deg) scaleY(1);
       }
     }
-    .te-checkbox__label {
+    .an-checkbox__label {
       color: #409eff;
     }
   }
