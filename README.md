@@ -25,4 +25,25 @@ createApp(App).use(AntentaUI).mount("#app")
 以上代码便完成Antenta的引入，需要注意的是，样式文件需要单独引入。
 
 ### 开始使用
+```vue
+<template>
+  <an-switch v-model="active"></an-switch>
+</template>
 
+<script>
+import { defineComponent, reactive, toRefs } from 'vue';
+
+export default defineComponent({
+  name: 'App',
+  setup () {
+    const state = reactive({
+      active: false
+    })
+    
+    return {
+      ...toRefs(state)
+    }
+  }
+})
+</script>
+```
