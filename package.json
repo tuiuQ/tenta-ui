@@ -2,7 +2,7 @@
   "name": "antenta-ui",
   "version": "1.0.2",
   "private": false,
-  "main": "dist/tenta-ui.umd.min.js",
+  "main": "dist/antenta-ui.umd.min.js",
   "author": {
     "name": "tenta",
     "email": "13719283454@163.com"

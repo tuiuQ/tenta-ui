@@ -17,7 +17,7 @@ npm i antenta-ui
 import { createApp } from 'vue'
 import App from './App.vue'
 import AntentaUI from 'antenta-ui'
-import 'antenta-ui/dist/tenta-ui.css'
+import 'antenta-ui/dist/antenta-ui.css'
 
 createApp(App).use(AntentaUI).mount("#app")
 ```
