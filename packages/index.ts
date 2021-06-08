@@ -17,7 +17,6 @@ import Form from './components/Form/index.vue'
 import FormItem from './components/FormItem/index.vue'
 import Row from './components/Row/index.vue'
 import Col from './components/Col/index.vue'
-import InputNumber from './components/InputNumber/index.vue'
 
 import './assets/fonts/iconfont.css';
 import './assets/styles/styles.less';
@@ -42,8 +41,7 @@ const components = [
   Form,
   FormItem,
   Row,
-  Col,
-  InputNumber
+  Col
 ];
 
 const install = function (Vue: any) {
