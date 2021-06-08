@@ -1,22 +1,13 @@
 <template>
   <div class="container">
-    <te-form
-      :model="model"
-      :label-width="100"
-    >
-      <te-form-item label="用户名">
-        <te-input
-          placeholder="请输入用户名"
-          v-model="model.username"
-        ></te-input>
-      </te-form-item>
-
-      <te-form-item label="记住用户">
-        <te-switch
-          v-model="model.active"
-        ></te-switch>
-      </te-form-item>
-    </te-form>
+    <an-row type="flex" justify="center">
+      <an-col :span="8">
+        <an-input-number
+          v-model="value"
+        ></an-input-number>
+      </an-col>
+    </an-row>
+    {{ value }}
   </div>
 </template>
 
@@ -28,7 +19,8 @@ export default defineComponent({
   setup() {
 
     const state = reactive({
-      model: {}
+      model: {},
+      value: 2
     })
 
     const methods = {
@@ -43,20 +35,41 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-  .wrapper {
-    width: 375px;
-    margin: 100px auto;
-  }
-  .row {
-    margin: 20px 0;
-    .te-button {
-      margin: 0 10px;
-    }
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
+  //.wrapper {
+  //  border: .5px solid #ddd;
+  //  padding: 10px;
+  //}
+  //.row {
+  //  margin: 20px 0;
+  //  .te-button {
+  //    margin: 0 10px;
+  //  }
+  //}
+  //
+  //.container {
+  //  width: 1080px;
+  //  margin: 150px auto;
+  //  .title {
+  //    margin: 5px 0;
+  //  }
+  //}
 
   .container {
-    width: 1080px;
-    height: 420px;
+    width: 100%;
     margin: 150px auto;
+    .an-row {
+      .an-col {
+        margin-bottom: 20px;
+        .content {
+          height: 38px;
+          background: gray;
+          border-radius: 4px;
+        }
+      }
+    }
   }
 </style>

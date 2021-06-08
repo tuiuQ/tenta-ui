@@ -1,6 +1,8 @@
 const path = require('path')
 
 module.exports = {
+  publicPath: './',
+  assetsDir: 'static',
   chainWebpack: config => {
     config.module
       .rule('js')
