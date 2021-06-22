@@ -1,0 +1,130 @@
+@import '../styles';
+
+.an-alert {
+  width: 100%;
+  padding: 8px 16px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  .transition(opacity, .2s);
+
+  .an-alert--icon {
+    font-size: 16px;
+    width: 16px;
+    &.is-big {
+      font-size: 28px;
+      width: 28px;
+    }
+  }
+
+  .an-alert--content {
+    display: table-cell;
+    padding: 0 8px;
+
+    .an-alert--title {
+      font-size: 13px;
+      line-height: 18px;
+      &.is-bold {
+        font-weight: bold;
+      }
+    }
+
+    .an-alert--description {
+      font-size: 12px;
+      margin: 5px 0 0;
+    }
+
+    .an-alert--close-btn {
+      font-size: 12px;
+      opacity: 1;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      &.is-customed {
+        font-style: normal;
+        font-size: 13px;
+        top: 9px;
+      }
+    }
+  }
+
+  &--success {
+    &.is-light {
+      background-color: @success-plain-background-color;
+      color: @success-color;
+      .an-alert--description {
+        color: @success-color;
+      }
+    }
+    &.is-dark {
+      background-color: @success-color;
+      color: white;
+    }
+  }
+
+  &--info {
+    &.is-light {
+      background-color: @info-plain-background-color;
+      color: @info-color;
+      .an-alert--description {
+        color: @info-color;
+      }
+    }
+    &.is-dark {
+      background-color: @info-color;
+      color: white;
+    }
+  }
+
+  &--warning {
+    &.is-light {
+      background-color: @warning-plain-background-color;
+      color: @warning-color;
+      .an-alert--description {
+        color: @warning-color;
+      }
+    }
+    &.is-dark {
+      background-color: @warning-color;
+      color: white;
+    }
+  }
+
+  &--danger {
+    &.is-light {
+      background-color: @danger-plain-background-color;
+      color: @danger-color;
+      .an-alert--description {
+        color: @danger-color;
+      }
+    }
+    &.is-dark {
+      background-color: @danger-color;
+      color: white;
+    }
+  }
+
+
+  &.is-light {
+    .an-alert--close-btn {
+      color: @seize-text-color;
+    }
+  }
+
+  &.is-dark {
+    .an-alert-close-btn {
+      color: white;
+    }
+  }
+
+  &.is-center {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,18 @@
+@import '../styles';
+.an-slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 0;
+  &.is-animating {
+    transition: transform .4s ease-in-out;
+  }
+
+  &.is-active {
+    z-index: 2;
+  }
+}

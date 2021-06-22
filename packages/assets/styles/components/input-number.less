@@ -1,0 +1,56 @@
+@import "../styles";
+.an-input-number {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  line-height: 38px;
+
+  ::v-deep .an-input {
+    display: block;
+  }
+  ::v-deep .an-input--inner {
+    -webkit-appearance: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+  }
+
+  .an-input-number__decrease,
+  .an-input-number__increase {
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    width: 40px;
+    height: 38.25px;
+    text-align: center;
+    background: #F5F7FA;
+    color: @text-color;
+    cursor: pointer;
+    font-size: 13px;
+    &.is-disabled {
+      color: @seize-text-color;
+      cursor: not-allowed;
+    }
+  }
+
+  .an-input-number__decrease {
+    left: 1px;
+    border-radius: 4px 0 0 4px;
+    border-right: 1px solid #DCDFE6;
+  }
+
+  .an-input-number__increase {
+    right: 1px;
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #DCDFE6;
+  }
+
+  &.is-disabled {
+    .an-input-number__decrease,
+    .an-input-number__increase {
+      border-color: #E4E7ED;
+      color: #E4E7ED;
+      cursor: not-allowed;
+    }
+  }
+}

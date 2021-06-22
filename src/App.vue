@@ -1,14 +1,12 @@
 <template>
-  <div class="container">
-    <an-row type="flex" justify="center">
-      <an-col :span="8">
-        <an-input-number
-          v-model="value"
-        ></an-input-number>
-      </an-col>
-    </an-row>
-    {{ value }}
-  </div>
+  <an-row>
+    <an-col :sm="5" :md="12">
+      <div class="content"></div>
+    </an-col>
+    <an-col :sm="19" :md="12">
+      <div class="content"></div>
+    </an-col>
+  </an-row>
 </template>
 
 <script lang="ts">
@@ -61,7 +59,10 @@ export default defineComponent({
   .container {
     width: 100%;
     margin: 150px auto;
-    .an-row {
+    
+  }
+
+  .an-row {
       .an-col {
         margin-bottom: 20px;
         .content {
@@ -71,5 +72,5 @@ export default defineComponent({
         }
       }
     }
-  }
+
 </style>

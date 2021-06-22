@@ -1,0 +1,270 @@
+@import "../styles";
+.an-button {
+  display: inline-block;
+  line-height: @no-line-height;
+  min-height: 40px;
+  white-space: nowrap;
+  cursor: pointer;
+  background: @base-white;
+  border: @solid-line;
+  color: @text-color;
+  -webkit-appearance: none;
+  .user-select();
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: .1s;
+  font-weight: 500;
+  padding: 12px 20px;
+  font-size: @base-font;
+  border-radius: @medium-radius;
+  &:hover,
+  &:focus {
+    color: @primary-color;
+    border-color: @primary-deep;
+    background-color: @primary-shadow;
+  }
+
+  [class*=an-icon-] {
+    font-size: @base-font!important;
+  }
+
+  &--medium {
+    min-height: 36px;
+    padding: 10px 20px!important;
+    font-size: @base-font;
+    border-radius: 4px;
+    &.is-circle {
+      padding: 10px!important;
+    }
+  }
+
+  &--small {
+    min-height: 32px;
+    padding: 9px 15px!important;
+    font-size: @extra-small-font;
+    border-radius: 3px;
+    &.is-circle {
+      padding: 9px!important;
+    }
+  }
+
+  &--mini {
+    min-height: 28px;
+    padding: 7px 15px!important;
+    font-size: @extra-small-font;
+    border-radius: 3px;
+    &.is-circle {
+      padding: 7px!important;
+    }
+  }
+
+  &.is-round {
+    border-radius: @large-radius;
+    padding: 12px 23px;
+  }
+
+  &.is-circle {
+    border-radius: @circle-radius;
+    padding: 12px;
+  }
+
+  &.is-disabled {
+    color: #c0c4cc;
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #fff;
+    border-color: #ebeef5;
+  }
+
+  &--primary {
+    color: @base-white;
+    background-color: @primary-color;
+    border-color: @primary-color;
+    &:hover,
+    &:focus {
+      color: @base-white;
+      background-color: @primary-hover;
+      border-color: @primary-hover;
+    }
+    &.is-plain {
+      color: @primary-color;
+      background-color: @primary-plain-background-color;
+      border-color: @primary-plain-border-color;
+      &:hover {
+        color: @base-white;
+        background-color: @primary-color;
+        border-color: @primary-color;
+      }
+      &.is-disabled {
+        color: #8cc5ff;
+        background-color: #ecf5ff;
+        border-color: #d9ecff;
+      }
+    }
+    &.is-disabled {
+      color: @base-white;
+      background-color: @primary-disabled;
+      border-color: @primary-disabled;
+    }
+  }
+
+  &--success {
+    color: @base-white;
+    background-color: @success-color;
+    border-color: @success-color;
+    &:hover,
+    &:focus {
+      color: @base-white;
+      background-color: @success-hover;
+      border-color: @success-hover;
+    }
+    &.is-plain {
+      color: @success-color;
+      background-color: @success-plain-background-color;
+      border-color: @success-plain-border-color;
+      &:hover,
+      &:focus {
+        color: @base-white;
+        background-color: @success-color;
+        border-color: @success-color;
+      }
+      &.is-disabled {
+        color: #a4da89;
+        background-color: #f0f9eb;
+        border-color: #e1f3d8;
+      }
+    }
+    &.is-disabled {
+      color: @base-white;
+      background-color: @success-disabled;
+      border-color: @success-disabled;
+    }
+  }
+
+  &--info {
+    color: @base-white;
+    background-color: @info-color;
+    border-color: @info-color;
+    &:hover,
+    &:focus {
+      color: @base-white;
+      background-color: @info-hover;
+      border-color: @info-hover;
+    }
+    &.is-plain {
+      color: @info-color;
+      background-color: @info-plain-background-color;
+      border-color: @info-plain-border-color;
+      &:hover,
+      &:focus {
+        color: @base-white;
+        background-color: @info-color;
+        border-color: @info-color;
+      }
+      &.is-disabled {
+        color: #bcbec2;
+        background-color: #f4f4f5;
+        border-color: #e9e9eb;
+      }
+    }
+    &.is-disabled {
+      color: @base-white;
+      background-color: @info-disabled;
+      border-color: @info-disabled;
+    }
+  }
+
+  &--warning {
+    color: @base-white;
+    background-color: @warning-color;
+    border-color: @warning-color;
+    &:hover,
+    &:focus {
+      color: @base-white;
+      background-color: @warning-hover;
+      border-color: @warning-hover;
+    }
+    &.is-plain {
+      color: @warning-color;
+      background-color: @warning-plain-background-color;
+      border-color: @warning-plain-border-color;
+      &:hover,
+      &:focus {
+        color: @base-white;
+        background-color: @warning-color;
+        border-color: @warning-color;
+      }
+      &.is-disabled {
+        color: #f0c78a;
+        background-color: #fdf6ec;
+        border-color: #faecd8;
+      }
+    }
+    &.is-disabled {
+      color: @base-white;
+      background-color: @warning-disabled;
+      border-color: @warning-disabled;
+    }
+  }
+
+  &--danger {
+    color: @base-white;
+    background-color: @danger-color;
+    border-color: @danger-color;
+    &:hover,
+    &:focus {
+      color: @base-white;
+      background-color: @danger-hover;
+      border-color: @danger-hover;
+    }
+    &.is-plain {
+      color: @danger-color;
+      background-color: @danger-plain-background-color;
+      border-color: @danger-plain-border-color;
+      &:hover,
+      &:focus {
+        color: @base-white;
+        background-color: @danger-color;
+        border-color: @danger-color;
+      }
+      &.is-disabled {
+        color: #f9a7a7;
+        background-color: #fef0f0;
+        border-color: #fde2e2;
+      }
+    }
+    &.is-disabled {
+      color: @base-white;
+      background-color: @danger-disabled;
+      border-color: @danger-disabled;
+    }
+  }
+
+  &--text {
+    border-color: @transparent;
+    color: @primary-color;
+    background-color: @transparent;
+    padding-left: 0;
+    padding-right: 0;
+    &:hover,
+    &:focus {
+      color: @primary-hover;
+      background-color: @transparent;
+      border-color: @transparent;
+    }
+    &.is-disabled {
+      color: @seize-text-color;
+      border-color: @transparent;
+      background-color: @transparent;
+    }
+  }
+
+  [class*=an-icon-] {
+    font-size: @base-font!important;
+  }
+  [class*=an-icon-] + span {
+    margin-left: 5px;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "primary-color": "#409EFF;",
+  "primary-hover": "#66B1FF",
+  "primary-plain-background-color": "#ECF5FF",
+  "primary-plain-border-color": "#D3D8FF",
+  "success-color": "#67C23A",
+  "success-hover": "#85CE61",
+  "success-plain-background-color": "#F0F9ED",
+  "success-plain-border-color": "#C2E7B0",
+  "info-color": "#909399",
+  "info-hover": "#A6A9AD",
+  "info-plain-background-color": "#F4F4F5",
+  "info-plain-border-color": "#D3D4D6",
+  "warning-color": "#E6A23C",
+  "warning-hover": "#EBB563",
+  "warning-plain-background-color": "#FDF6EC",
+  "warning-plain-border-color": "#F5DAB1",
+  "danger-color": "#F56C6C",
+  "danger-hover": "#F78989",
+  "danger-plain-background-color": "#FEF0F0",
+  "danger-plain-border-color": "#FBC4C4"
+}

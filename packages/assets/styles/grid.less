@@ -1,91 +1,120 @@
+@import "./modules";
+//.@{container} {
+//  .margin(x, auto);
+//  .padding(x, auto);
+//  .box-sizing();
+//  .transition(width .9s cubic-bezier(1, -0.02, 0, 1.04));
+//  width: 100%;
+//  min-width: 0;
+//}
 
-.@{row} {
-  .box-sizing();
+.@{row-name} {
+  flex-wrap: wrap;
   min-height: 1px;
-  clear: both;
+  position: relative;
+  .box-sizing();
+  .clearfix();
+}
 
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
+.@{row-name}--flex {
+  display: flex;
+
+  &.@{justify-name}-start {
+    justify-content: flex-start;
+  }
+  &.@{justify-name}-center {
+    justify-content: center;
+  }
+  &.@{justify-name}-end {
+    justify-content: flex-end;
+  }
+  &.@{justify-name}-space-between {
+    justify-content: space-between;
+  }
+  &.@{justify-name}-space-around {
+    justify-content: space-around;
+  }
+
+  &.@{align-name}-start {
+    align-items: flex-start;
+  }
+  &.@{align-name}-center {
+    align-items: center;
+  }
+  &.@{align-name}-end {
+    align-items: flex-end;
   }
 }
 
-// 列基础css
+
+
+
 .col-base-css() {
   .box-sizing();
   position: relative;
   min-height: 1px;
 }
 
-// 循环列，设置基础css
-.make-grid-col(@grid-count);
+.make-grid-columns (@columns);
 
-.make-grid-col(@len: @grid-count) {
+.make-grid-columns (@len: @columns) {
   .col(@i) {
     @classList: ~"
-      .@{col-name}-xs-@{i},
-      .@{col-name}-sm-@{i},
-      .@{col-name}-md-@{i},
-      .@{col-name}-lg-@{i}
+      .@{columns-name}-xs-@{i},
+      .@{columns-name}-sm-@{i},
+      .@{columns-name}-md-@{i},
+      .@{columns-name}-lg-@{i},
+      .@{columns-name}-lx-@{i}
     ";
     .col(@i + 1, ~"@{classList}");
   }
-
   .col(@i, @list) when (@i =< @len) {
     @classList: ~"
-      .@{col-name}-xs-@{i},
-      .@{col-name}-sm-@{i},
-      .@{col-name}-md-@{i},
-      .@{col-name}-lg-@{i}
+      .@{columns-name}-xs-@{i},
+      .@{columns-name}-sm-@{i},
+      .@{columns-name}-md-@{i},
+      .@{columns-name}-lg-@{i},
+      .@{columns-name}-lx-@{i}
     ";
-    .col(@i + 1, ~"@{classList},@{list}");
+    .col(@i + 1, ~"@{classList}, @{list}");
   }
-
   .col(@i, @list) when (@i > @len) {
     @{list} {
       .col-base-css();
     }
   }
-  .col(1)
+  .col(1);
 }
 
+.generate-columns(xs, @columns);
 
-// 循环生成列
-.make-col-loop(xs, @grid-count);
-
-.make-col-loop(@type, @n, @i: 1) when (@i <= @n) {
-  @col-class-name: ~"@{col-name}-@{type}";
+.generate-columns(@type, @n, @i: 1) when (@i <= @n) {
+  @col-class-name: ~"@{columns-name}-@{type}";
   .@{col-class-name}-@{i} {
-    width: @i / @n * 100%;
+    width: (@i / @n * 100%);
     float: left;
   }
-
-  // 偏移
   .@{col-class-name}-offset-@{i} {
-    margin-left: @i / @n * 100%;
+    margin-left: (@i / @n * 100%);
   }
-
-  // 推
   .@{col-class-name}-push-@{i} {
-    left: @i / @n * 100%;
+    left: (@i / @n * 100%);
   }
-
-  // 拉
   .@{col-class-name}-pull-@{i} {
-    right: @i / @n * 100%;
+    right: (@i / @n * 100%);
   }
-
-  .make-col-loop(@type, @n, (@i + 1));
+  .generate-columns(@type, @n, (@i + 1));
 }
 
-@media (min-width: @sm) {
-  .make-col-loop(sm, @grid-count);
+@media (min-width: @screen-sm-min) {
+  .generate-columns(sm, @columns);
 }
-@media (min-width: @md) {
-  .make-col-loop(md, @grid-count);
+@media (min-width: @screen-md-min) {
+  .generate-columns(md, @columns);
 }
-@media (min-width: @lg) {
-  .make-col-loop(lg, @grid-count);
+@media (min-width: @screen-lg-min) {
+  .generate-columns(lg, @columns);
+}
+@media (min-width: @screen-lx-min) {
+  .generate-columns(lx, @columns);
 }

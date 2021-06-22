@@ -1,0 +1,27 @@
+@import '../styles';
+.an-carousel-director {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  &.dir-next {
+    right: 15px;
+  }
+  &.dir-prev {
+    left: 15px;
+  }
+}

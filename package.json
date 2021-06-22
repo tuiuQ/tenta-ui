@@ -1,6 +1,6 @@
 {
   "name": "antenta-ui",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": false,
   "main": "dist/antenta-ui.umd.min.js",
   "author": {
@@ -10,7 +10,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib packages/index.ts"
+    "lib": "vue-cli-service build --target lib packages/main.ts"
   },
   "dependencies": {
     "core-js": "^3.6.5",
