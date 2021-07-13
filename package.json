@@ -10,7 +10,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib packages/main.ts"
+    "lib": "vue-cli-service build --target lib packages/main.ts",
+    "types": "tsc --project packages/tsconfig.json"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -24,6 +25,7 @@
     "@vue/compiler-sfc": "^3.0.0",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "resize-observer-polyfill": "^1.5.1",
     "typescript": "~4.1.5"
   },
   "browserslist": [
